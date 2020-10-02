@@ -1,28 +1,12 @@
 import random
-
-def generationCreator(parents,offspring,counter):
-
-    while counter <= 10:
-        while parents > 0:
-            theCoin = RandomGenerator()
-            if theCoin <= 2:
-                parents = parents - 1
-                offspring = offspring + 2
-            elif theCoin == 3:
-                parents = parents - 1
-        print('offspring gen',counter,':',offspring)
-        #print('parents gen',counter,':',parents)
-        counter = counter + 1
-        parents = offspring
-        offspring = 0
-        
-
-def RandomGenerator():
-    theRandomBoi = random.randint(1,4)
+    
+def RandomGenerator(low, high):
+    theRandomBoi = random.randint(low, high)
     return theRandomBoi
+
 def main():
-    parents = 10
-    offspring = 0
-    generationCreator(parents,offspring,1)
+    number1 = int(input("What should the minimum possible value be? "))
+    number2 = int(input("What should the maximum possible value be? "))
+    RandomGenerator(number1, number2)
     
 main()
